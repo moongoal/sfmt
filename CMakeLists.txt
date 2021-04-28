@@ -23,3 +23,19 @@ target_compile_definitions(
     PRIVATE
         -DHAVE_SSE2
 )
+
+install(
+    TARGETS sfmt
+    ARCHIVE
+)
+
+file(
+    GLOB SFMT_HEADERS
+    LIST_DIRECTORIES false
+    *.h
+)
+
+install(
+    FILES ${SFMT_HEADERS}
+    DESTINATION include/sfmt
+)
